@@ -1,0 +1,19 @@
+[2026-11-06T20:56:30.247821000Z INFO  solana_test_validator] agave-validator 4.3.2 (src:a2033000; feat:c9ad34d2, client:Agave)
+[2026-11-06T20:56:30.652518400Z INFO  solana_test_validator] Starting validator with: ArgsOs {
+        inner: [
+            "C:\\Users\\shane\\active_release\\bin\\solana-test-validator.exe",
+            "--reset",
+        ],
+    }
+[2026-11-06T20:56:31.093985700Z INFO  solana_perf] AVX detected
+[2026-11-06T20:56:31.094079000Z INFO  solana_perf] AVX2 detected
+[2026-11-06T20:56:39.417128200Z INFO  solana_faucet::faucet] Faucet started. Listening on: 0.0.0.0:9900
+[2026-11-06T20:56:39.544139400Z INFO  solana_faucet::faucet] Faucet account address: 9wv84u4ZmBNdnhCZ8Bu158ZrDtuWonWNArS47MN6eTZP
+[2026-11-06T20:56:41.401539900Z INFO  agave_validator::admin_rpc_service] started admin rpc service!
+[2026-11-06T20:56:42.092353400Z INFO  solana_test_validator] Feature for A1pengvuM6JEcyNuTnMqepBKhwHE3N6PmUrdATGawhJS deactivated
+[2026-11-06T20:56:55.493845500Z INFO  solana_ledger::blockstore] Opening blockstore at "test-ledger\\rocksdb"
+[2026-11-06T20:56:57.261894200Z WARN  solana_ledger::blockstore_db] Unable to detect Rocks columns: Error { message: "IO error: No such file or directory: Failed to open NewSequentialFiletest-ledger\\rocksdb/CURRENT: The system cannot find the file specified.\r\n" }
+[2026-11-06T20:58:07.366489800Z INFO  solana_ledger::blockstore] Opening blockstore done; blockstore open took 71.9s
+[2026-11-06T20:58:09.863935400Z INFO  solana_metrics::metrics] metrics disabled: environment variable not found
+[2026-11-06T20:58:11.228655100Z INFO  agave_snapshots::unarchive] Extracting "test-ledger\\genesis.tar.bz2"...
+[2026-11-06T20:58:11.510503300Z INFO  solana_metrics::metrics] datapoint: shred_insert_is_full slot=0i total_time_ms=77i last_index=31i num_repaired=0i num_recovered=0i
