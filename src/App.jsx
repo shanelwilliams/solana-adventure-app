@@ -34,6 +34,13 @@ export default function App() {
         return (
             <div className="crash-screen">
                 <h1>💥 MEMORY CRASH: SYSTEM FAILURE</h1>
+
+                <img 
+                src="https://plus.unsplash.com/premium_photo-1768374180121-f86dc6a506e3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" 
+                alt="System Crash"
+                className="crash-image" 
+                />
+
                 <p>Your energy fully dropped to 0%.</p>
                 <button onClick={resetGame}>🔄 Reboot & Restart</button>
             </div>
