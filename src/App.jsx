@@ -24,6 +24,22 @@ export default function App() {
         setCurrentSceneId(choice.nextScene);
     };
 
+    const resetGame = () => {
+        setCurrentSceneId(1);
+        setEnergy(100);
+        setBugsFixed(0);
+    };
+
+    if (energy <= 0) {
+        return (
+            <div className="crash-screen">
+                <h1>💥 MEMORY CRASH: SYSTEM FAILURE</h1>
+                <p>Your energy fully dropped to 0%.</p>
+                <button onClick={resetGame}>🔄 Reboot & Restart</button>
+            </div>
+        );
+    }
+
     const handleWalletClick = () => {
         if (connected) {
             setConnected(false);
@@ -42,11 +58,17 @@ export default function App() {
     if (isConnecting) {
         walletButtonText = "⚡ Authorizing...";
     } else if (connected) {
-        walletButtonText = `Connected: ${publicKey}`;
+        walletButtonText = `Connected: ${publicKey}`
     }
 
     return (
-        <div>
+        <div style={{
+            backgroundImage: `url(${currentScene.backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            minHeight: '100vh',
+            color: 'white'
+        }}>
             <header className="game-header">
             <h1>Hackathon Simulator</h1>
 
@@ -64,15 +86,23 @@ export default function App() {
                 </div>
 
                 <div className="choices-container">
-                    {currentScene.choices.map((choice, index) => (
-                        <button
-                        key={index}
-                        onClick={() => handleChoice(choice)}
-                        className="choice-btn"
-                        >
-                            {choice.text}
-                        </button>
-                    ))}
+                    
+                    {currentScene.choices.length > 0 ? (
+                        currentScene.choices.map((choice, index) => (
+                            <button
+                                key={index}
+                                onClick={() => handleChoice(choice)}
+                                className="choice-btn"
+                            >
+                                {choice.text}
+                            </button>
+                        ))
+                    ) : (
+                        <div className="victory-panel">
+                            <h3 style={{ color: "00ff66" }}>🎉 HACKATHON COMPLETE!</h3>
+                            <button onClick={resetGame} className="restart-btn">🔄 Run Another Project Sprint</button>
+                        </div>
+                    )}
                 </div>
         </div>
     )
